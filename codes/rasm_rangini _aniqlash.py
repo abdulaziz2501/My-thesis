@@ -31,5 +31,5 @@
 # cv2.circle(img,(80,80), 55, (255,255,0), -1)
 # cv2.ellipse(img, (300,425), (80, 20), 5, 0, 360, (0,0,255), -1)
 # cv2.imshow('image',img)
-cv2.waitKey(0)
+# cv2.waitKey(0)
 cv2.destroyAllWindows()
