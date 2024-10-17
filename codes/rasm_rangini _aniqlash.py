@@ -24,7 +24,7 @@
 #     cv2.destroyAllWindows()
 
 # import numpy as np
-import cv2
+# import cv2
 img = cv2.imread('rasm2.png',1)
 cv2.line(img,(20,400),(400,20),(255,255,255),3)
 cv2.rectangle(img,(200,100),(400,400),(0,255,0),5)
