@@ -23,7 +23,7 @@
 # if cv2.waitKey(0) & 0xff == 27:
 #     cv2.destroyAllWindows()
 
-import numpy as np
+# import numpy as np
 import cv2
 img = cv2.imread('rasm2.png',1)
 cv2.line(img,(20,400),(400,20),(255,255,255),3)
