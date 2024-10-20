@@ -6,11 +6,11 @@ import imageio
 
 
 ascent = misc. ascent ()
-brain = imageio.imread('rasm1.png')
+brain = imageio.imread('/home/PycharmProject/My-thesis/pictures/preprocessed_images/0_left.jpg')
 print (type( brain ) )
 print ( brain . shape, brain . dtype)
 # save ﬁle
-# imageio.imwrite('rasm2.png',  brain )
+imageio.imwrite('rasm2.png',  brain )
 plt . imshow(ascent)
 plt . show()
 plt . ﬁgure ( ﬁgsize =(10, 3.6) )
