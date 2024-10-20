@@ -25,6 +25,5 @@ plt . imshow(ascent[200:220, 200:220], cmap=plt.cm.blue, interpolation ='naerest
 plt . subplots_adjust (wspace=0, hspace =0.,top =0.99, bottom=0.01,left =0.05, right =0.99)
 plt . show()
 q4 = ascent
-
 q16= ascent
 q32= ascent
