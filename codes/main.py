@@ -10,7 +10,7 @@ brain = imageio.imread('rasm1.png')
 print (type( brain ) )
 print ( brain . shape, brain . dtype)
 # save ﬁle
-imageio.imwrite('rasm2.jpeg',  brain )
+imageio.imwrite('rasm2.png',  brain )
 plt . imshow(ascent)
 plt . show()
 plt . ﬁgure ( ﬁgsize =(10, 3.6) )
