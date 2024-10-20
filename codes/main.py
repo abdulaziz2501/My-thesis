@@ -6,7 +6,7 @@ import imageio
 
 
 ascent = misc. ascent ()
-brain = imageio.imread('/home/PycharmProject/My-thesis/pictures/preprocessed_images/0_left.jpg')
+brain = imageio.imread('rasm1.png')
 print (type( brain ) )
 print ( brain . shape, brain . dtype)
 # save ﬁle
