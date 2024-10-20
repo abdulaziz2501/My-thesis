@@ -10,7 +10,7 @@ brain = imageio.imread('rasm1.png')
 print (type( brain ) )
 print ( brain . shape, brain . dtype)
 # save ﬁle
-imageio.imwrite('rasm2.png',  brain )
+imageio.imwrite('rasm2.jpeg',  brain )
 plt . imshow(ascent)
 plt . show()
 plt . ﬁgure ( ﬁgsize =(10, 3.6) )
@@ -24,3 +24,7 @@ plt . subplot (133)
 plt . imshow(ascent[200:220, 200:220], cmap=plt.cm.blue, interpolation ='nearest' )
 plt . subplots_adjust (wspace=0, hspace =0.,top =0.99, bottom=0.01,left =0.05, right =0.99)
 plt . show()
+
+q4 = ascent
+q16= ascent
+q32= ascent
