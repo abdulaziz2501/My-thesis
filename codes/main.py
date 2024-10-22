@@ -4,7 +4,6 @@ import numpy as np
 import time
 import imageio
 
-
 ascent = misc. ascent ()
 brain = imageio.imread('rasm1.png')
 print (type( brain ) )
