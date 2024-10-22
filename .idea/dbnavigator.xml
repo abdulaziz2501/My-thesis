@@ -6,7 +6,7 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -232,6 +232,7 @@ GROUP BY region.region_name;]]></console>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
       <object connection-id="e26545bd-9650-4612-917a-d3da5cc44077" object-ref="consoles/Mysql Databases" />
+      <object connection-id="e26545bd-9650-4612-917a-d3da5cc44077" object-ref="schemas/information_schema/views/CHARACTER_SETS" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
