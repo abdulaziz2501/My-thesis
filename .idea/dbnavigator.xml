@@ -17,14 +17,52 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="182a7808-bb1f-4da2-b3d4-32432ab6fd55">
-      <console name="Connection" type="STANDARD" schema="sample-database" session="Main"><![CDATA[--.create table jurnal(
---    id int unique,
---    name varchar(64),
---    surname varchar(32)
---);
-insert into jurnal(id, name, surname) values (2,'Abduhakimov', 'Abdulaziz');
+      <console name="Connection" type="STANDARD" schema="sample-database" session="Main"><![CDATA[CREATE TABLE students (
+  id INTEGER PRIMARY KEY,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL
+);
 
-select * from jurbal;]]></console>
+CREATE TABLE teachers (
+  id INTEGER PRIMARY KEY,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL
+);
+
+-- Insert sample data into the students table
+INSERT INTO students (id, first_name, last_name) VALUES
+(1, 'Alice', 'Adams'),
+(2, 'Bob', 'Baker'),
+(3, 'Carol', 'Carter'),
+(4, 'David', 'Diaz'),
+(5, 'Eva', 'Evans');
+
+-- Insert sample data into the teachers table
+INSERT INTO teachers (id, first_name, last_name) VALUES
+(1, 'Frank', 'Fisher'),
+(2, 'Grace', 'Griffin'),
+(3, 'Henry', 'Harrison'),
+(4, 'Irene', 'Ingram'),
+(5, 'Jack', 'Andrey');
+
+
+SELECT first_name, last_name
+FROM students
+WHERE last_name LIKE 'A%' or   'E%' or   'U%' or   'I%' or   'O%' 
+UNION
+SELECT first_name, last_name
+FROM teachers
+WHERE last_name LIKE 'A%' or   'E%' or   'U%' or   'I%' or   'O%';
+
+SELECT first_name, length(last_name) 
+FROM students
+UNION
+SELECT first_name, last_name
+FROM teachers
+
+SELECT first_name || ' ' || last_name AS full_name
+FROM students
+ORDER BY LENGTH(last_name), last_name;]]></console>
     </connection>
     <connection id="e26545bd-9650-4612-917a-d3da5cc44077">
       <console name="Mysql Databases" type="STANDARD" schema="unions" session="Main"><![CDATA[--join1 vazifa
@@ -53,16 +91,22 @@ from employees inner join departments on employees.department_id = departments.d
 
 --join6 vazifa 
 select xodim.first_name, xodim.last_name, xodim.phone_number, concat(manager.first_name,  ' ', manager.last_name) as manager_name
-from employees xodim inner join employees manager on xodim.manager_id = manager.employee_id;]]></console>
+from employees xodim inner join employees manager on xodim.manager_id = manager.employee_id;
+
+SELECT first_name, last_name
+FROM students
+WHERE last_name LIKE ('A%' or 'E%'  or   'U%' or   'I%' or 'O%' )
+union
+SELECT first_name, last_name
+FROM teachers
+WHERE last_name LIKE 'A%' or  LIKE 'E%' or  LIKE 'U%' or  LIKE 'I%' or  LIKE 'O%';]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="e26545bd-9650-4612-917a-d3da5cc44077" object-ref="consoles/Mysql Databases" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="182a7808-bb1f-4da2-b3d4-32432ab6fd55" />
@@ -80,7 +124,9 @@ from employees xodim inner join employees manager on xodim.manager_id = manager.
     <filters />
   </component>
   <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
-    <recently-used-interfaces />
+    <recently-used-interfaces>
+      <mapping database-type="MYSQL" interface-id="DEFAULT" />
+    </recently-used-interfaces>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
