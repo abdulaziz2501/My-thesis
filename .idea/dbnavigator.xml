@@ -45,14 +45,41 @@ INSERT INTO teachers (id, first_name, last_name) VALUES
 (4, 'Irene', 'Ingram'),
 (5, 'Jack', 'Andrey');
 
---union 1 vazifa
-SELECT first_name, last_name
+--1-topshiriq:
+
+SELECT first_name || ' ' || last_name AS full_name
 FROM students
-WHERE last_name LIKE 'A%' or   'E%' or   'U%' or   'I%' or   'O%' 
+WHERE first_name LIKE 'A%' OR first_name LIKE 'E%' OR first_name LIKE 'I%' OR first_name LIKE 'O%' OR first_name LIKE 'U%'
 UNION
-SELECT first_name, last_name
+SELECT first_name || ' ' || last_name AS full_name
 FROM teachers
-WHERE last_name LIKE 'A%' or   'E%' or   'U%' or   'I%' or   'O%';]]></console>
+WHERE first_name LIKE 'A%' OR first_name LIKE 'E%' OR first_name LIKE 'I%' OR first_name LIKE 'O%' OR first_name LIKE 'U%';
+
+--2-topshiriq: 
+
+SELECT first_name || ' ' || last_name AS full_name
+FROM students 
+UNION
+SELECT first_name || ' ' || last_name AS full_name
+FROM teachers ORDER BY length(last_name) ;
+
+--3-topshiriq: 
+
+SELECT first_name || ' ' || last_name AS full_name
+FROM students
+UNION
+SELECT first_name || ' ' || last_name AS full_name
+FROM teachers;
+
+--4-topshiriq: 
+
+SELECT first_name || ' ' || last_name AS full_name, id
+FROM students
+UNION
+SELECT first_name || ' ' || last_name AS full_name, id
+FROM teachers
+ORDER BY id DESC
+LIMIT 3;]]></console>
     </connection>
     <connection id="e26545bd-9650-4612-917a-d3da5cc44077">
       <console name="Mysql Databases" type="STANDARD" schema="unions" session="Main"><![CDATA[--join1 vazifa
@@ -82,14 +109,47 @@ from employees inner join departments on employees.department_id = departments.d
 --join6 vazifa 
 select xodim.first_name, xodim.last_name, xodim.phone_number, concat(manager.first_name,  ' ', manager.last_name) as manager_name
 from employees xodim inner join employees manager on xodim.manager_id = manager.employee_id;
-
-SELECT first_name, last_name
-FROM students
-WHERE last_name LIKE ('A%' or 'E%'  or   'U%' or   'I%' or 'O%' )
+--union 1 vazifa
+select first_name, last_name 
+from students
+where first_name like 'A%' 
+   or first_name like 'E%' 
+   or first_name like 'I%' 
+   or first_name like 'O%' 
+   or first_name like 'U%'
 union
-SELECT first_name, last_name
-FROM teachers
-WHERE last_name LIKE 'A%' or  LIKE 'E%' or  LIKE 'U%' or  LIKE 'I%' or  LIKE 'O%';]]></console>
+select first_name, last_name 
+from teachers
+where first_name like 'A%' 
+   or first_name like 'E%' 
+   or first_name like 'I%' 
+   or first_name like 'O%' 
+   or first_name like 'U%';
+  
+--union 2 vazifa
+select first_name, last_name 
+from students
+union
+select first_name, last_name 
+from teachers
+order by length(last_name), last_name;
+
+--union 3 vazifa
+select first_name, last_name, 'student' as source 
+from students
+union
+select first_name, last_name, 'teacher' as source 
+from teachers
+order by source, last_name;
+
+--union 4 vazifa
+select id, first_name, last_name  
+from students 
+union 
+select id, first_name, last_name  
+from teachers order by id desc limit 3;
+
+--intersect 1 vazifa]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -98,6 +158,7 @@ WHERE last_name LIKE 'A%' or  LIKE 'E%' or  LIKE 'U%' or  LIKE 'I%' or  LIKE 'O%
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
       <object connection-id="182a7808-bb1f-4da2-b3d4-32432ab6fd55" object-ref="consoles/Connection" />
+      <object connection-id="e26545bd-9650-4612-917a-d3da5cc44077" object-ref="consoles/Mysql Databases" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
@@ -107,6 +168,7 @@ WHERE last_name LIKE 'A%' or  LIKE 'E%' or  LIKE 'U%' or  LIKE 'I%' or  LIKE 'O%
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="e26545bd-9650-4612-917a-d3da5cc44077" dataset="new_data.departments" active-filter-id="" />
     <filter-actions connection-id="e26545bd-9650-4612-917a-d3da5cc44077" dataset="new_data.employees" active-filter-id="" />
+    <filter-actions connection-id="e26545bd-9650-4612-917a-d3da5cc44077" dataset="unions.students" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
