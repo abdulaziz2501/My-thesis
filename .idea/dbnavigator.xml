@@ -45,24 +45,14 @@ INSERT INTO teachers (id, first_name, last_name) VALUES
 (4, 'Irene', 'Ingram'),
 (5, 'Jack', 'Andrey');
 
-
+--union 1 vazifa
 SELECT first_name, last_name
 FROM students
 WHERE last_name LIKE 'A%' or   'E%' or   'U%' or   'I%' or   'O%' 
 UNION
 SELECT first_name, last_name
 FROM teachers
-WHERE last_name LIKE 'A%' or   'E%' or   'U%' or   'I%' or   'O%';
-
-SELECT first_name, length(last_name) 
-FROM students
-UNION
-SELECT first_name, last_name
-FROM teachers
-
-SELECT first_name || ' ' || last_name AS full_name
-FROM students
-ORDER BY LENGTH(last_name), last_name;]]></console>
+WHERE last_name LIKE 'A%' or   'E%' or   'U%' or   'I%' or   'O%';]]></console>
     </connection>
     <connection id="e26545bd-9650-4612-917a-d3da5cc44077">
       <console name="Mysql Databases" type="STANDARD" schema="unions" session="Main"><![CDATA[--join1 vazifa
@@ -106,7 +96,9 @@ WHERE last_name LIKE 'A%' or  LIKE 'E%' or  LIKE 'U%' or  LIKE 'I%' or  LIKE 'O%
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="182a7808-bb1f-4da2-b3d4-32432ab6fd55" object-ref="consoles/Connection" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="182a7808-bb1f-4da2-b3d4-32432ab6fd55" />
