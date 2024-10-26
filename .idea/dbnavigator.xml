@@ -17,66 +17,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="182a7808-bb1f-4da2-b3d4-32432ab6fd55">
-      <console name="Connection" type="STANDARD" schema="sample-database" session="Main"><![CDATA[CREATE TABLE students (
-  id INTEGER PRIMARY KEY,
-  first_name TEXT NOT NULL,
-  last_name TEXT NOT NULL
-);
-
-CREATE TABLE teachers (
-  id INTEGER PRIMARY KEY,
-  first_name TEXT NOT NULL,
-  last_name TEXT NOT NULL
-);
-
--- Insert sample data into the students table
-INSERT INTO students (id, first_name, last_name) VALUES
-(1, 'Alice', 'Adams'),
-(2, 'Bob', 'Baker'),
-(3, 'Carol', 'Carter'),
-(4, 'David', 'Diaz'),
-(5, 'Eva', 'Evans');
-
--- Insert sample data into the teachers table
-INSERT INTO teachers (id, first_name, last_name) VALUES
-(1, 'Frank', 'Fisher'),
-(2, 'Grace', 'Griffin'),
-(3, 'Henry', 'Harrison'),
-(4, 'Irene', 'Ingram'),
-(5, 'Jack', 'Andrey');
-
---1-topshiriq:
-
-SELECT first_name || ' ' || last_name AS full_name
-FROM students
-WHERE first_name LIKE 'A%' OR first_name LIKE 'E%' OR first_name LIKE 'I%' OR first_name LIKE 'O%' OR first_name LIKE 'U%'
-UNION
-SELECT first_name || ' ' || last_name AS full_name
-FROM teachers
-WHERE first_name LIKE 'A%' OR first_name LIKE 'E%' OR first_name LIKE 'I%' OR first_name LIKE 'O%' OR first_name LIKE 'U%';
-
---2-topshiriq: 
-
-SELECT *, first_name || ' ' || last_name AS full_name FROM students 
-UNION
-SELECT *, first_name || ' ' || last_name AS full_name FROM teachers 
-ORDER BY length(last_name) last_name;
-
---3-topshiriq: 
-
-SELECT first_name || ' ' || last_name AS full_name
-FROM students
-UNION
-SELECT first_name || ' ' || last_name AS full_name
-FROM teachers;
-
---4-topshiriq: 
-
-SELECT first_name || ' ' || last_name AS full_name, id
-FROM students
-UNION
-SELECT first_name || ' ' || last_name AS full_name, id
-FROM teachers ORDER BY id DESC LIMIT 3;]]></console>
+      <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
     <connection id="e26545bd-9650-4612-917a-d3da5cc44077">
       <console name="Mysql Databases" type="STANDARD" schema="unions" session="Main"><![CDATA[--join1 vazifa
@@ -173,7 +114,8 @@ select * from orders where quantity >= 10 except select * from shipments;
 select * from shipments where quantity < 5 except select * from orders;]]></console>
     </connection>
     <connection id="3484ff2c-2a0e-4f9f-93fc-89f1eec0b09d">
-      <console name="Connection 1" type="STANDARD" schema="main" session="Main"><![CDATA[select * from students;]]></console>
+      <console name="Connection 1" type="STANDARD" schema="main" session="Main"><![CDATA[select * from students;
+select * from teachers;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -181,7 +123,6 @@ select * from shipments where quantity < 5 except select * from orders;]]></cons
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="182a7808-bb1f-4da2-b3d4-32432ab6fd55" object-ref="consoles/Connection" />
       <object connection-id="3484ff2c-2a0e-4f9f-93fc-89f1eec0b09d" object-ref="consoles/Connection 1" />
       <object connection-id="e26545bd-9650-4612-917a-d3da5cc44077" object-ref="consoles/Mysql Databases" />
     </open-files>
