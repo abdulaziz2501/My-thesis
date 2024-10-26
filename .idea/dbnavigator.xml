@@ -173,7 +173,7 @@ select * from orders where quantity >= 10 except select * from shipments;
 select * from shipments where quantity < 5 except select * from orders;]]></console>
     </connection>
     <connection id="3484ff2c-2a0e-4f9f-93fc-89f1eec0b09d">
-      <console name="Connection 1" type="STANDARD" schema="" session="Main"><![CDATA[select * from students;]]></console>
+      <console name="Connection 1" type="STANDARD" schema="main" session="Main"><![CDATA[select * from students;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
