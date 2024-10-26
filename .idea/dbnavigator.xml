@@ -135,12 +135,12 @@ from teachers
 order by length(last_name), last_name;
 
 --union 3 vazifa
-select first_name, last_name, 'student' as source 
+select first_name, last_name, 'student' as manba 
 from students
 union
-select first_name, last_name, 'teacher' as source 
+select first_name, last_name, 'teacher' as manba 
 from teachers
-order by source, last_name;
+order by manba, last_name;
 
 --union 4 vazifa
 select id, first_name, last_name  
@@ -149,7 +149,60 @@ union
 select id, first_name, last_name  
 from teachers order by id desc limit 3;
 
---intersect 1 vazifa]]></console>
+--intersect 1 vazifa
+SELECT product, quantity
+FROM orders
+INTERSECT
+SELECT product, quantity
+FROM shipments;
+
+--intersect 2 vazifa
+SELECT o.product, o.quantity AS order_quantity, s.quantity AS shipment_quantity
+FROM orders o
+JOIN shipments s ON o.quantity = s.quantity
+WHERE o.quantity >= 5;
+
+--intersect 3 vazifa
+SELECT o.order_id
+FROM orders o
+JOIN shipments s ON o.product = s.product AND o.quantity = s.quantity;
+
+--intersect 4 vazifa
+SELECT s.shipment_id
+FROM shipments s
+JOIN orders o ON s.product = o.product AND s.quantity = o.quantity
+ORDER BY s.product;
+
+--except 1 vazifa
+SELECT product
+FROM orders
+EXCEPT
+SELECT product
+FROM shipments;
+
+--except 2 vazifa
+SELECT product
+FROM shipments
+EXCEPT
+SELECT product
+FROM orders
+ORDER BY product;
+
+--except 3 vazifa
+SELECT order_id
+FROM orders
+WHERE order_id >= 10
+EXCEPT
+SELECT order_id
+FROM shipments;
+--except 4 vazifa
+
+SELECT shipment_id
+FROM shipments
+WHERE quantity < 5
+EXCEPT
+SELECT shipment_id
+FROM orders;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -703,7 +756,7 @@ from teachers order by id desc limit 3;
     <operation-settings>
       <transactions>
         <uncommitted-changes>
-          <on-project-close value="ASK" />
+          <on-project-close value="COMMIT" />
           <on-disconnect value="ASK" />
           <on-autocommit-toggle value="ASK" />
         </uncommitted-changes>
