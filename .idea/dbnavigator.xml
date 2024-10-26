@@ -57,11 +57,10 @@ WHERE first_name LIKE 'A%' OR first_name LIKE 'E%' OR first_name LIKE 'I%' OR fi
 
 --2-topshiriq: 
 
-SELECT first_name || ' ' || last_name AS full_name
-FROM students 
+SELECT *, first_name || ' ' || last_name AS full_name FROM students 
 UNION
-SELECT first_name || ' ' || last_name AS full_name
-FROM teachers ORDER BY length(last_name) ;
+SELECT *, first_name || ' ' || last_name AS full_name FROM teachers 
+ORDER BY length(last_name) last_name;
 
 --3-topshiriq: 
 
@@ -77,9 +76,7 @@ SELECT first_name || ' ' || last_name AS full_name, id
 FROM students
 UNION
 SELECT first_name || ' ' || last_name AS full_name, id
-FROM teachers
-ORDER BY id DESC
-LIMIT 3;]]></console>
+FROM teachers ORDER BY id DESC LIMIT 3;]]></console>
     </connection>
     <connection id="e26545bd-9650-4612-917a-d3da5cc44077">
       <console name="Mysql Databases" type="STANDARD" schema="unions" session="Main"><![CDATA[--join1 vazifa
