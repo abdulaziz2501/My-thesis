@@ -1,7 +1,7 @@
 # import numpy as np
 # import cv2
 # import matplotlib.pyplot as plt
-# # Load an color image in grayscale
+# # Load an color image in lgrayscale
 # img = cv2.imread('rasm1.png',0)
 # plt.imshow(img)
 # plt.show()
@@ -35,3 +35,4 @@
 # cv2.destroyAllWindows()
 def rasm():
   pass
+dhjd
