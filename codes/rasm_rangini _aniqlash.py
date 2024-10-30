@@ -37,3 +37,4 @@ def rasm():
   pass
 dhjd
 dhdh
+print
