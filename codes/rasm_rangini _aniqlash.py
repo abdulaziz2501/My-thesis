@@ -35,4 +35,3 @@
 # cv2.destroyAllWindows()
 def rasm():
   pass
-dhjd
