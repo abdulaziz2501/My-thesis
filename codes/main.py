@@ -8,7 +8,6 @@ ascent = misc. ascent ()
 brain = imageio.imread('rasm1.png')
 print (type( brain ) )
 print ( brain . shape, brain . dtype)
-# save ﬁle
 imageio.imwrite('rasm2.png',  brain )
 plt . imshow(ascent)
 plt . show()
