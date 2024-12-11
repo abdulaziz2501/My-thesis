@@ -13,7 +13,6 @@ imageio.imwrite('rasm2.png',  brain )
 plt . imshow(ascent)
 plt . show()
 plt . ﬁgure ( ﬁgsize =(10, 3.6) )
-# ﬁrst subplot
 plt . subplot (131)
 plt . imshow(ascent)
 plt . subplot (132)
